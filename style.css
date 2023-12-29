@@ -1,0 +1,39 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    width: 400px;
+    justify-content: space-around;
+}
+
+.side {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 250px;
+    align-items: center;
+}
+
+.container {
+    width: 500px;
+    height: 500px;
+    display: grid;    
+}
+
+.layout {
+    display: flex;
+    width: 1000px;
+    height: 500px;
+    margin-top: 25px;
+}
+
+button {
+    width: 70px;
+    height: 40px;
+}
