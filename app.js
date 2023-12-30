@@ -1,8 +1,21 @@
 let color = "black";
+let click = false;
 
 document.addEventListener("DOMContentLoaded", function(){
     
     createBoard(16);
+
+    document.querySelector("body").addEventListener("click", function(e){
+        if(e.target.tagName != "BUTTON"){
+            click = !click;
+            let draw = document.querySelector("#draw");
+            if(click){
+                draw.innerHTML = "Drawing";
+            } else {
+                draw.innerHTML = "Not Drawing";
+            }
+        }
+    })
 
     let btn_popup = document.querySelector("#popup")
     btn_popup.addEventListener("click", function(){
@@ -45,18 +58,22 @@ function getSize(){
 
 function colorDiv(){
 
-    if(color == "random"){
-        this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`
-    } else if(color == "red"){
-        this.style.backgroundColor = 'red'
-    } else if(color == "blue"){
-        this.style.backgroundColor = 'blue'
-    } else if(color == "green"){
-        this.style.backgroundColor = 'green'
-    } else if(color == "delete"){
-        this.style.backgroundColor = 'white'
-    } else {
-        this.style.backgroundColor = 'black'
+    if(click){
+        
+        if(color == "random"){
+            this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`
+        } else if(color == "red"){
+            this.style.backgroundColor = 'red'
+        } else if(color == "blue"){
+            this.style.backgroundColor = 'blue'
+        } else if(color == "green"){
+            this.style.backgroundColor = 'green'
+        } else if(color == "delete"){
+            this.style.backgroundColor = 'white'
+        } else {
+            this.style.backgroundColor = 'black'
+        }
+
     }
 
 }
